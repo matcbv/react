@@ -1,0 +1,21 @@
+.btn-container{
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button{
+    width: 50%;
+    background-color: darkcyan;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    font-family: monospace;
+}
+
+button:hover{
+    cursor: pointer;
+    outline: 2px solid black;
+}
