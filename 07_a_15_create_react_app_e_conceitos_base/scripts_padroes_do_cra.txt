@@ -1,0 +1,9 @@
+Por padrão, o create-react-app cria alguns scripts padrões em nosso package.json. Esses são:
+
+"start": "react-scripts start" - Responsável por iniciar nossa aplicação.
+
+"build": "react-scripts build" - Responsável por realizar o build de nossa aplicação através do webpack com babel e certos minificadores.
+
+"test": "react-scripts test" - Responsável por rodas os testes para nossa aplicação.
+
+"eject": "react-scripts eject" - Veremos mais a frente sobre o script eject.

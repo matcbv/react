@@ -1,0 +1,21 @@
+--------- Sobre ---------
+
+O create-react-app (CRA) é uma ferramenta de scaffolding criada para facilitar a inicialização de projetos React. Com ele, é criada uma estrutura inicial de projeto, instalando dependências e configurando um ambiente que já vem pronto com:
+
+- Webpack para empacotamento de arquivos.
+- Babel para transpilar o código ES6+ para versões mais antigas de JavaScript.
+- Hot Reloading para uma experiência de desenvolvimento mais ágil.
+- Scripts padrão como start, build e test.
+
+--------- Utilização ---------
+
+Há duas formas de utilizarmos o CRA: Instalando-o através do npm de forma global ou local, ou executando-o diretamente através do npx. Exs.:
+
+npm:
+
+    npm i -g create-react-app
+    create-react-app nome-do-projeto
+
+npx:
+
+    npx create-react-app nome-do-projeto
