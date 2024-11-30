@@ -3,6 +3,7 @@ import { Component } from 'react';
 import { Post } from '../../components/Post';
 import { getPosts } from '../../utils/get_posts';
 import { Button } from '../../components/Button';
+import { SeachInput } from '../../components/SearchInput';
 
 /*
   Um componente é um dos blocos fundamentais no React e representa uma parte reutilizável da interface de usuário (UI). Ele encapsula estrutura (HTML/JSX), lógica (JavaScript) e estilo (CSS) relacionados a uma funcionalidade ou seção específica da aplicação.
@@ -14,7 +15,8 @@ class Home extends Component{
       posts: [],
       allPosts: [],
       page: 0,
-      postsPerPage: 3
+      postsPerPage: 3,
+      searchValue: ''
     };
 
     async componentDidMount(){
@@ -40,20 +42,40 @@ class Home extends Component{
        });
     };
 
+    handleChange = (e) => {
+      console.log(e)
+      this.setState({ searchValue: e.target.value })
+    }
+
     render(){
-      const { posts, page, allPosts } = this.state;
+      const { posts, page, allPosts, searchValue } = this.state;
       const noMorePosts = page >= allPosts.length - 1;
+      const filteredPosts = !!searchValue ? 
+        allPosts.filter((post) => {
+          return post.title.toLowerCase().includes(searchValue.toLowerCase());
+        })
+      : posts;
+
       return (
         <div className='container'>
-          <input type="search" />
-          <Post posts={posts}/>
-          <div className='btn-container'>
-            <Button 
-              text='Load more posts'
-              onClick={ this.loadSomePosts }
-              disabled={noMorePosts}
-            />
+          <div className='search-container'>
+            {!!searchValue && (
+              <>
+                <h1 className='search-value'>Search value: { searchValue }</h1>
+              </>
+            )}
+            <SeachInput handleChange={this.handleChange} />
           </div>
+          <Post posts={filteredPosts}/>
+          {!searchValue && (
+            <div className='btn-container'>
+              <Button 
+                text='Load more posts'
+                onClick={ this.loadSomePosts }
+                disabled={noMorePosts}
+              />
+            </div>
+          )}
         </div>
       );
     };
