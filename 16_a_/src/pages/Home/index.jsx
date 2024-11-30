@@ -31,11 +31,16 @@ class Home extends Component{
       });
     };
 
+    // Com a função loadSomePosts, iremos adicionar novos posts para serem exibidos.
     loadSomePosts = () => {
       const { page, postsPerPage, allPosts, posts } = this.state;
+      // Somando o número atual de posts com a quantidade a ser adicionada:
       const nextPage = page + postsPerPage;
+      // Obtendo os novos posts a serem exibidos:
       const nextPosts = allPosts.slice(nextPage, nextPage + postsPerPage);
+      // Adicionando os novos post a lista com os demais:
       posts.push(...nextPosts);
+      // Atualizando o estado do nosso componente:
       this.setState({ 
         posts,
         page: nextPage
@@ -43,12 +48,12 @@ class Home extends Component{
     };
 
     handleChange = (e) => {
-      console.log(e)
       this.setState({ searchValue: e.target.value })
     }
 
     render(){
       const { posts, page, allPosts, searchValue } = this.state;
+      // Checando se ainda existem posts a serem exibidos:
       const noMorePosts = page >= allPosts.length - 1;
       const filteredPosts = !!searchValue ? 
         allPosts.filter((post) => {
@@ -71,7 +76,9 @@ class Home extends Component{
             <div className='btn-container'>
               <Button 
                 text='Load more posts'
+                // Passando a propriedade de nome onClick para ser utilizada no evento onClick no input do comonente Button:
                 onClick={ this.loadSomePosts }
+                // Passando o booleano informado se ainda existem posts a serem exibidos.
                 disabled={noMorePosts}
               />
             </div>
