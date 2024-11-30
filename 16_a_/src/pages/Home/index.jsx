@@ -41,14 +41,17 @@ class Home extends Component{
     };
 
     render(){
-      const { posts } = this.state;
+      const { posts, page, allPosts } = this.state;
+      const noMorePosts = page >= allPosts.length - 1;
       return (
         <div className='container'>
+          <input type="search" />
           <Post posts={posts}/>
           <div className='btn-container'>
             <Button 
               text='Load more posts'
               onClick={ this.loadSomePosts }
+              disabled={noMorePosts}
             />
           </div>
         </div>
