@@ -33,7 +33,7 @@ const HomeHooks = () => {
     setAllPosts(completePost)
   }, []);
 
-  // Com o hook useEffect(), iremos realizar a atualização de nosso componente quando necesário. Como parâmetros, iremos passar uma função de callback, e um array contendo suas dependências. Essas dependências, quando modificadas, irão chamar a função passada.
+  // Com o hook useEffect(), iremos realizar a atualização de nosso componente quando necessário. Como parâmetros, iremos passar uma função de callback, e um array contendo suas dependências. Essas dependências, quando modificadas, irão chamar a função passada.
   useEffect(() => {
     loadPosts(0, postsPerPage);
   }, [loadPosts, postsPerPage])

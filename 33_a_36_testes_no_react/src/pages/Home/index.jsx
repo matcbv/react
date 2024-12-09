@@ -14,11 +14,9 @@ const HomeHooks = () => {
   const [searchValue, setSearchValue] = useState('');
 
   const noMorePosts = page >= allPosts.length - 1;
-  const filteredPosts = !!searchValue ? 
-    allPosts.filter((post) => {
-      return post.title.toLowerCase().includes(searchValue.toLowerCase());
-    })
-  : posts;
+  const filteredPosts = !!searchValue ? allPosts.filter(
+    (post) => post.title.toLowerCase().includes(searchValue.toLowerCase())
+  ): posts;
 
   const loadPosts = useCallback(async (page, postsPerPage) => {
     const completePost = await getPosts();
@@ -105,11 +103,9 @@ class Home extends Component{
     render(){
       const { posts, page, allPosts, searchValue } = this.state;
       const noMorePosts = page >= allPosts.length - 1;
-      const filteredPosts = !!searchValue ? 
-        allPosts.filter((post) => {
-          return post.title.toLowerCase().includes(searchValue.toLowerCase());
-        })
-      : posts;
+      const filteredPosts = !!searchValue ? allPosts.filter(
+        (post) => post.title.toLowerCase().includes(searchValue.toLowerCase())
+      ): posts;
 
       return (
         <div className='container'>

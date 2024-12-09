@@ -5,7 +5,7 @@ export class Button extends Component{
     render(){
         const { text, onClick, disabled } = this.props;
         return(
-            <button 
+            <button
                 onClick={onClick}
                 disabled={disabled}
             >
