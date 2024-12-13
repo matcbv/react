@@ -51,7 +51,7 @@ describe('<Button />', () => {
 
     it('should match snapshot', () => {
         const fn = jest.fn();
-        const {container} = render(<Button text="Load more posts" onClick={fn} disabled={false}/>);
+        const { container } = render(<Button text="Load more posts" onClick={fn} disabled={false}/>);
 
         expect(container.firstChild).toMatchSnapshot();
     })

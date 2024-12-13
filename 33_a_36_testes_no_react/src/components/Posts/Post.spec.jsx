@@ -1,5 +1,5 @@
-import { Posts } from '../Posts'
-const { render } = require('@testing-library/react')
+import { Posts } from '../Posts';
+import { render, screen } from '@testing-library/react';
 
 const props = {
     posts: [
@@ -22,10 +22,21 @@ const props = {
             url: 'images/img3.png' 
          }
     ]
-}
+};
 
 describe('<Post />', () => {
     it('should render the posts', () => {
         render(<Posts {...props}/>);
-    })
-})
+
+        expect(screen.getAllByRole('heading', { name: /title/i })).toHaveLength(3);
+        expect(screen.getAllByRole('img', { name: /title/i })).toHaveLength(3);
+        expect(screen.getAllByText(/body/i)).toHaveLength(3);
+        // Através do método toHaveAttribute(attribute, value), verificamos se determinado elemento possui um atributo com um respectivo valor:
+        expect(screen.getByRole('img', { name: /title 3/i })).toHaveAttribute('src', 'images/img3.png');
+    });
+
+    it('should match snapshot', () => {
+        const { container } = render(<Posts {...props}/>);
+        expect(container.firstChild).toMatchSnapshot();
+    });
+});
