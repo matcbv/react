@@ -1,3 +1,5 @@
+import PropTypes from "prop-types"
+
 export const PostCard = ({url, title, body}) => {
     return(
         <div className='post'>
@@ -8,4 +10,10 @@ export const PostCard = ({url, title, body}) => {
             </div>
         </div>
     )
+}
+
+PostCard.propTypes = {
+    url: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    body: PropTypes.string.isRequired,
 }

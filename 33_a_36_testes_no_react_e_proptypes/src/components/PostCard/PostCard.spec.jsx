@@ -20,5 +20,5 @@ describe('<PostCard />', () => {
         const { container } = render(<PostCard {...props} />);
         // Ao utilizarmos o método toMatchSnapshot() pela primeira vez, é criado um snapshot do estado atual de nosso componente. Esse será salvo no diretório __snapshots__. Em testes futuros, ele irá realizar uma comparação do componente com o estado contido no último snapshot salvo.
         expect(container.firstChild).toMatchSnapshot();
-    })
+    });
 }); 

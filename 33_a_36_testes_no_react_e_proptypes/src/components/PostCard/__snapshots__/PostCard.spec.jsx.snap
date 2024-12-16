@@ -6,7 +6,7 @@ exports[`<PostCard /> should match snapshot 1`] = `
 >
   <img
     alt="title 1"
-    src="img/img.png"
+    src="images/img.png"
   />
   <div
     class="post-content"

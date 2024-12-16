@@ -1,5 +1,6 @@
-import { Component } from 'react';
 import './styles.css'
+import PropTypes from 'prop-types';
+import { Component } from 'react';
 
 export class Button extends Component{
     render(){
@@ -11,6 +12,16 @@ export class Button extends Component{
             >
                 { text }
             </button>
-        )
-    }
-}
+        );
+    };
+};
+
+Button.defaultProps = {
+    disabled: false,
+};
+
+Button.propTypes = {
+    text: PropTypes.string.isRequired,
+    onClick: PropTypes.func.isRequired,
+    disabled: PropTypes.bool,
+};

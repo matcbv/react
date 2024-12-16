@@ -14,7 +14,7 @@ const HomeHooks = () => {
   const [searchValue, setSearchValue] = useState('');
 
   const noMorePosts = page >= allPosts.length - 1;
-  const filteredPosts = !!searchValue ? allPosts.filter(
+  const filteredPosts = searchValue ? allPosts.filter(
     (post) => post.title.toLowerCase().includes(searchValue.toLowerCase())
   ): posts;
 
@@ -48,7 +48,7 @@ const HomeHooks = () => {
             <h1 className='search-value'>Search value: { searchValue }</h1>
           </>
         )}
-        <SeachInput handleChange={handleChange} />
+        <SeachInput handleChange={handleChange} searchValue={searchValue} />
       </div>
       <Post posts={filteredPosts}/>
       {!searchValue && (
@@ -72,7 +72,7 @@ class Home extends Component{
       postsPerPage: 3,
       searchValue: ''
     };
-    
+
     async componentDidMount(){
       await this.loadPosts();
     };
@@ -96,14 +96,14 @@ class Home extends Component{
        });
     };
 
-    handleChange = (e) => {
+    handleChange = (e) => { 
       this.setState({ searchValue: e.target.value })
     }
 
     render(){
       const { posts, page, allPosts, searchValue } = this.state;
       const noMorePosts = page >= allPosts.length - 1;
-      const filteredPosts = !!searchValue ? allPosts.filter(
+      const filteredPosts = searchValue ? allPosts.filter(
         (post) => post.title.toLowerCase().includes(searchValue.toLowerCase())
       ): posts;
 
@@ -131,5 +131,7 @@ class Home extends Component{
       );
     };
   };
+
+Home;
 
 export default HomeHooks;
