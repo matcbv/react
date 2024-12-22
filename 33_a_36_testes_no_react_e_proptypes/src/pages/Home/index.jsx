@@ -1,6 +1,6 @@
 import './styles.css';
 import { Component } from 'react';
-import { Post } from '../../components/Post';
+import { Posts } from '../../components/Posts';
 import { getPosts } from '../../utils/get_posts';
 import { Button } from '../../components/Button';
 import { SeachInput } from '../../components/SearchInput';
@@ -50,7 +50,7 @@ const HomeHooks = () => {
         )}
         <SeachInput handleChange={handleChange} searchValue={searchValue} />
       </div>
-      <Post posts={filteredPosts}/>
+      <Posts posts={filteredPosts}/>
       {!searchValue && (
         <div className='btn-container'>
           <Button 
@@ -117,7 +117,7 @@ class Home extends Component{
             )}
             <SeachInput handleChange={this.handleChange} />
           </div>
-          <Post posts={filteredPosts}/>
+          <Posts posts={filteredPosts}/>
           {!searchValue && (
             <div className='btn-container'>
               <Button 

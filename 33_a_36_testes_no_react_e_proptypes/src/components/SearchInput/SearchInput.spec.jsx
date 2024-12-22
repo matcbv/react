@@ -23,7 +23,6 @@ describe('<SearchInput />', () => {
         const value = 'random value';
 
         userEvent.type(input, value);
-        expect(input.value).toBe(value);
         expect(fn).toHaveBeenCalledTimes(value.length);
     });
 

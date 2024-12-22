@@ -13,7 +13,11 @@ export const UselessComponent = ({prop_01, prop_02, prop_03}) => {
     )
 }
 
-// Podemos definir valores padrão para nossos props com a propriedade defaultProps. Iremos passar um objeto contendo o nome da prop e seu valor padrão.
+/*
+    Podemos definir valores padrão para nossos props com a propriedade defaultProps. Iremos passar um objeto contendo o nome da prop e seu valor padrão.
+
+    Obs.: Utilizar defaultProps está em depreciação, sendo mais recomendado definir o valor padrão diretamente nos parâmetros do componente.
+*/
 UselessComponent.defaultProps = {
     prop_03: []
 }

@@ -1,0 +1,15 @@
+---------- Sobre ----------
+
+O Mock Service Worker (MSW) é uma biblioteca JavaScript usada para simular requisições de rede em aplicações. Ele trabalha interceptando chamadas HTTP feitas pela aplicação, permitindo criar cenários de teste controlados e previsíveis
+
+---------- Casos de uso ----------
+
+- Interceptação de requisições: Intercepta chamadas como fetch e XHR antes que alcancem o servidor real.
+
+- Definição de respostas mockadas: Permite criar respostas customizadas para diferentes endpoints, incluindo status, cabeçalhos e corpo.
+
+- Simulação de erros: Facilita testar como a aplicação reage a falhas de rede ou respostas inválidas.
+
+- Testes isolados: Remove a dependência de um backend real, permitindo que testes sejam mais rápidos e reproduzíveis.
+
+- Compatibilidade com várias plataformas: Funciona em navegadores e em ambientes Node.js.
