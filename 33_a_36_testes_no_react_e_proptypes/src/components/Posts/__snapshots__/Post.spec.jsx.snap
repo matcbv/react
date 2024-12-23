@@ -4,12 +4,6 @@ exports[`<Post /> should match snapshot 1`] = `
 <div
   class="posts"
 >
-  if (
-  ) 
-  <p>
-    Ops... Nenhum post foi encontrado.
-  </p>
-   else
   <div
     class="post"
   >

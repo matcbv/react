@@ -5,12 +5,14 @@ import PropTypes from 'prop-types';
 export const Posts = ({ posts = [] }) => {
     return (
         <div className="posts">
-          if ({!posts.length}) {
-            <p>Ops... Nenhum post foi encontrado.</p>
-          } else{
-            posts.map(post =>
-              // Espalhando as propriedades de post como props individuais:
-              <PostCard {...post} key={ post.title }/>
+          {
+            posts.length <= 0 ? (
+              <p>Ops... Nenhum post foi encontrado.</p>
+            ): (
+              posts.map(post =>
+                // Espalhando as propriedades de post como props individuais:
+                <PostCard {...post} key={ post.title }/>
+              )
             )
           }
           </div>
