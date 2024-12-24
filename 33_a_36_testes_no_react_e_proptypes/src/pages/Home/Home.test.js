@@ -1,5 +1,5 @@
-const { rest } = require('msw');
-const { setupServer } = require('msw/node');
+import { rest } from 'msw';
+import { setupServer } from 'msw/node';
 import { render, screen, waitForElementToBeRemoved } from '@testing-library/react';
 import Home from '.';
 

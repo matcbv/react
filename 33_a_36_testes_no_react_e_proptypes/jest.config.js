@@ -1,9 +1,7 @@
 module.exports = {
-    
-    transform: {
-        '^.+\\.jsx?$': 'babel-jest', // Transpila arquivos JavaScript usando o Babel
-    },
+    transform: {'^.+\\.jsx?$': 'babel-jest'},
+    extensionsToTreatAsEsm: ['.js', '.jsx'],
     transformIgnorePatterns: [
-        '/node_modules/(?!(msw|@bundled-es-modules)/)', // Transpila apenas os pacotes específicos
+        '/node_modules/(?!(msw|@bundled-es-modules)/)', // Ignora tudo, exceto `msw` e `statuses`
     ],
 };
