@@ -11,7 +11,7 @@ function App() {
     Ou sua forma abreviada:
     <> ... </>
 
-    Obs.: Em sua forma abreviado, não é possível o uso de atributos na tag.
+    Obs.: Em sua forma abreviada, não é possível o uso de atributos na tag.
   */
   return (
     // Em jsx, className possui a função da propriedade class do HTML.
