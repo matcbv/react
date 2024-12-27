@@ -1,0 +1,9 @@
+--------- Sobre ---------
+
+O babel-jest integra o Babel com o Jest e adiciona funcionalidades específicas para tornar o processo de testes mais fluido, mas não substitui o Babel padrão.
+
+--------- Seu funcionamento ---------
+
+- Integração com o Jest: Ele permite que o Jest utilize o Babel para transformar código escrito com sintaxe moderna (como ES6+, JSX, etc.) antes de executar os testes. Ou seja, o Jest usa o babel-jest para "transpilar" o código, mas o Babel em si continua sendo o mecanismo de transformação.
+
+- Função adicional: O babel-jest adiciona um suporte extra para o Jest ao incluir configurações e transformações específicas para o ambiente de testes, como o babel-preset-jest, que garante que a transformação funcione corretamente em um ambiente de teste.

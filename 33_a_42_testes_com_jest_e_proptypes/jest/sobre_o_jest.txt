@@ -1,0 +1,18 @@
+--------- Sobre ---------
+
+O Jest é um framework de testes em JavaScript criado pelo Facebook que tem como principal função facilitar a escrita e execução de testes automatizados. Ele é amplamente utilizado em projetos que usam React, mas também funciona com outras bibliotecas e frameworks JavaScript.
+
+
+--------- Funções e características do Jest ---------
+
+- Execução de Testes Automatizados: Permite escrever testes unitários, de integração e de snapshot para garantir que o código funcione conforme o esperado.
+
+- Suporte a Mocks e Spies: Oferece ferramentas para criar mocks (simulações de funções, módulos ou objetos) e spies (espionagem de chamadas de funções), essenciais para testar funcionalidades isoladas.
+
+- Snapshots: Captura o estado da interface ou saída de um componente e permite comparações automáticas em testes futuros para identificar alterações não intencionais.
+
+- Configuração Simples: Funciona sem a necessidade de configurações complexas, especialmente em projetos React.
+
+- Cobertura de Código: Gera relatórios detalhados sobre quais partes do código foram cobertas pelos testes.
+
+- Watch Mode: Oferece um modo interativo que detecta alterações no código e executa automaticamente os testes relacionados.
