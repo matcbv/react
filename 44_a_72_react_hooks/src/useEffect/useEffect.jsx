@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import './useEffect.css';
+import '../styles.css';
 
 function eventFn(){
   console.log('Clicado!')
