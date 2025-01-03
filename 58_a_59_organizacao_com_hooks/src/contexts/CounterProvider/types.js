@@ -1,0 +1,4 @@
+export const counterTypes = {
+    INCREMENT_COUTER: 'INCREMENT_COUNTER',
+    DECREMENT_COUNTER: 'DECREMENT_COUNTER',
+};
