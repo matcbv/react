@@ -1,58 +1,6 @@
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
+import useFetch from "../../utils/useFetch";
 import Post from "../Post";
-
-const useFetch = (url, options) => {
-    const [result, setResult] = useState([]);
-    const [loading, setLoading] = useState(false);
-    const [shouldRender, setShouldRender] = useState(false);
-    const urlRef = useRef('');
-    const optionsRef = useRef({});
-
-    useEffect(() => {
-        if(!isObjectsEqual(urlRef.current, url)){
-            urlRef.current = url;
-            setShouldRender(s => !s);
-        };
-
-        if(!isObjectsEqual(optionsRef.current, options)){
-            optionsRef.current = options;
-            setShouldRender(s => !s);
-        }
-    }, [url, options]);
-
-    // Utilizando o useEffect para garantir que os posts só sejam requisitados durante a primeira montagem de nosso componente ou caso a url ou as options mudem.
-    useEffect(() => {
-        let waitFetch = true;
-        const controller = new AbortController();
-        const signal = controller.signal;
-        setLoading(true);
-        const fetchData = async () => {
-            try{
-                const result = await (await fetch(urlRef.current, {signal, ...optionsRef.current})).json();
-                if(waitFetch){
-                    setResult(result);
-                    setLoading(false);
-                };
-            }catch (e){
-                if(waitFetch){
-                    setLoading(false)
-                };
-                throw e;
-            };
-        };
-        fetchData();
-
-        return () => {
-            waitFetch = false;
-        }
-
-    }, [shouldRender]);
-    return [result, loading];
-}
-
-const isObjectsEqual = (firstObj, secObj) => {
-    return JSON.stringify(firstObj) === JSON.stringify(secObj);
-};
 
 export default function Posts(){
     const [postId, setPostId] = useState('')
