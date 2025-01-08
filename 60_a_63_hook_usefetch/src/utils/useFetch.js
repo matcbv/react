@@ -1,11 +1,11 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useState, useRef } from 'react';
 
 // Comparando se nosso objeto de opções da requisição está diferente do anterior:
-const isObjectsEqual = (firstObj, secObj) => {
-    return JSON.stringify(firstObj) === JSON.stringify(secObj);
-};
+const isObjectsEqual = (firstObj, secObj) => JSON.stringify(firstObj) === JSON.stringify(secObj);
 
-export default useFetch = (url, options) => {
+export default function useFetch (url, options){
+    // Abaixo, criamos os estados a serem utilizados em nosso hook:
+    // Obs.: Os componentes de um hook utilizado em um componente, quando atualizados, também irão causar a re-renderização do componente.
     const [result, setResult] = useState([]);
     const [loading, setLoading] = useState(false);
     const [shouldRender, setShouldRender] = useState(false);
@@ -13,12 +13,14 @@ export default useFetch = (url, options) => {
     const optionsRef = useRef({});
 
     useEffect(() => {
-        if(!isObjectsEqual(urlRef.current, url)){
+        if(!isObjectsEqual(urlRef.current, url) && !isObjectsEqual(optionsRef.current, options)){
+            urlRef.current = url;
+            optionsRef.current = options;
+            setShouldRender(s => !s);
+        } else if(!isObjectsEqual(urlRef.current, url)){
             urlRef.current = url;
             setShouldRender(s => !s);
-        };
-
-        if(!isObjectsEqual(optionsRef.current, options)){
+        } else if(!isObjectsEqual(optionsRef.current, options)){
             optionsRef.current = options;
             setShouldRender(s => !s);
         }
@@ -43,7 +45,7 @@ export default useFetch = (url, options) => {
                 };
             }catch (e){
                 if(waitFetch){
-                    setLoading(false)
+                    setLoading(false);
                 };
                 console.warn(e); 
             };
@@ -58,4 +60,4 @@ export default useFetch = (url, options) => {
 
     }, [shouldRender]);
     return [result, loading];
-}
+};

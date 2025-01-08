@@ -31,7 +31,7 @@ function App(){
   /*
     Com o hook useCallback, conseguimos memorizar funções para que elas não sejam recriadas em cada renderização do componente. Sendo útil em situações onde passar funções como props para componentes filhos pode causar re-renderizações desnecessárias. Sua estrutura segue o seguinte padrão:
 
-    useCallback(callbackFunction, [dependencies]){}
+    useCallback(callbackFunction, [dependencies]);
   */
   const incrementCounter = useCallback(
     (num) => setCounter((prevState) => prevState + num),

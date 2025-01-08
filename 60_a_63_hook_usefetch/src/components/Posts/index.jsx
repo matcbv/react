@@ -3,20 +3,18 @@ import useFetch from "../../utils/useFetch";
 import Post from "../Post";
 
 export default function Posts(){
-    const [postId, setPostId] = useState('')
+    const [postId, setPostId] = useState('');
     let [result, loading] = useFetch(
         'https://jsonplaceholder.typicode.com/posts/' + postId,
         {
             method: 'GET',
             headers: {
-                id: postId,
+                postId: postId,
             },
         }
     );
 
-    const handleClick = (id) => {
-        setPostId(id)
-    };
+    const handleClick = id => setPostId(id);
 
     if(loading){
         return (

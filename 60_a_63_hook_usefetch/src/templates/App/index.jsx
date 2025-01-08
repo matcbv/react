@@ -1,4 +1,4 @@
-import './App.css';
+import './styles.css';
 import Posts from '../../components/Posts';
 
 function App() {

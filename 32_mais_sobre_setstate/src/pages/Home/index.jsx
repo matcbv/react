@@ -1,4 +1,4 @@
-import './Home.css';
+import './styles.css';
 import { Component } from 'react';
 
 class Home extends Component{
