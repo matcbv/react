@@ -1,0 +1,89 @@
+O React possui três principais processos durante seu funcionamento:
+
+- Montagem (Mount):
+
+Inicialiação dos useStates com e sem lazy initializers
+                        
+                        |
+                        |
+                        v
+
+            Rederização do componente
+
+                        |
+                        |
+                        v
+
+                Atualização do DOM
+
+                        |
+                        |
+                        v
+
+            Execução dos LayoutEffects
+
+                        |
+                        |
+                        v
+
+    Pintura do navegador para exibição do conteúdo
+
+                        |
+                        |
+                        v
+
+                Execução dos Effects
+
+
+
+- Atualização (Update):
+
+        Renderização do componente
+
+                    |
+                    |
+                    v
+
+            Atualização do DOM
+
+                    |
+                    |
+                    v
+
+        Limpeza dos LayoutEffects
+
+                    |
+                    |
+                    v
+
+        Execução dos LayoutEffects
+
+                    |
+                    |
+                    v
+
+Pintura do navegador para exibição do conteúdo
+
+                    |
+                    |
+                    v
+
+            Limpeza dos Effects
+
+                    |
+                    |
+                    v
+
+            Execução dos Effects
+
+
+
+- Desmontagem (Unmount):
+
+        Limpeza dos LayoutEffects
+
+                    |
+                    |
+                    v
+
+            Limpeza dos Effect
