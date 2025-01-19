@@ -1,5 +1,12 @@
 import { forwardRef, useImperativeHandle, useRef, useState } from "react"
 
+const styles = {
+    height: '150px',
+    width: '150px',
+    overflowX: 'scroll',
+    marginTop: '10px',
+};
+
 export default forwardRef(
     function CountedDisplay({counted}, ref){
         const [randomNum, setRandomNum] = useState('0.11');
@@ -20,7 +27,7 @@ export default forwardRef(
         }));
 
         return (
-            <div style={{height: '150px', width: '150px', overflowX: 'scroll', marginTop: '10px'}}>
+            <div style={{...styles}}>
                 {counted.map( c => <p key={`c-${c}`} ref={indexRef} onClick={handleClick}>{c} + {randomNum}</p> )}
             </div>
         );

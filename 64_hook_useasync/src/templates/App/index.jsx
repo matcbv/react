@@ -1,38 +1,12 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useEffect } from 'react';
+import useAsync from '../../utils/useAsync';
 import './styles.css';
 
-const useAsync = (asyncFunction, shouldFetch) => {
-  const [result, setResult] = useState(null);
-  const [status, setStatus] = useState('idle');
-  const [error, setError] = useState(null);
-
-  const getData = useCallback( async () => {
-      setResult(null);
-      setStatus('pending');
-      setError(null);
-      
-      return asyncFunction()
-      .then(res => {
-        setStatus('settled');
-        setResult(res);
-      })
-      .catch(e => {
-        setStatus('error');
-        setError(e);
-      });
-    }, [asyncFunction]
-  );
-
-  useEffect(() => {
-    shouldFetch ?? getData();
-  }, [getData, shouldFetch]);
-
-  return [getData, result, status, error];
-}
-
+// Função a ser enviada para useAsync:
 const fetchData = async () => await (await fetch('https://jsonplaceholder.typicode.com/posts')).json();
 
 function App() {
+  // Passando uma função e um booleano indicando se devemos realizar a nossa operação assíncrona:
   const [reFetchData, result, status, error] = useAsync(fetchData, true);
 
   // Abaixo, utilizaremos um useEffect que será chamado toda vez que a função reFetchData for alterada. Essa, só sefrerá alterações, caso a função passada para useAsync (fetchData) seja alterada.
