@@ -7,5 +7,5 @@ export const PostCard = ({ post }) => {
                 <p>{ post.body }</p>
             </div>
         </div>
-    )
-}
+    );
+};

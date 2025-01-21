@@ -1,6 +1,6 @@
 const urls = [
     'https://jsonplaceholder.typicode.com/posts',
-    'https://jsonplaceholder.typicode.com/photos'
+    'https://jsonplaceholder.typicode.com/photos',
 ];
 
 export const getPosts = async () => {
@@ -9,4 +9,4 @@ export const getPosts = async () => {
     const [posts, photos] = await Promise.all(promises.map(promise => promise.json()));
     const completePost = posts.map((post, i) => ({...post, url: photos[i].url}));
     return completePost;
-}
+};

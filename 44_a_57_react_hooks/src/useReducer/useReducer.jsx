@@ -29,7 +29,7 @@ const reducer = (state, action) => {
 }
 
 function App(){
-    // O hook useRefucer tem a função de atualizar o estado do nosso componente em situações mais complexas, onde utilizar o useSate não seria muito viável. Por parâmetro, iremos passar uma função reducer e o valor inicia a ser utilizado em nosso estado. Em retorno, obteremos nosso estado e uma função de dispatch.
+    // O hook useRefucer tem a função de atualizar o estado do nosso componente em situações mais complexas, onde utilizar o useSate não seria muito viável. Por parâmetro, iremos passar uma função reducer e o valor inicial a ser utilizado em nosso estado. Em retorno, obteremos nosso estado e uma função de dispatch.
     const [state, dispatch] = useReducer(reducer, globalState)
 
     return (
