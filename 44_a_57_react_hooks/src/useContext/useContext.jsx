@@ -1,12 +1,12 @@
 import '../styles.css';
-import { AppContext } from './contexts/AppContext';
+import { AppProvider } from './contexts/AppContext';
 import { Div } from './components/Div';
 
 function App(){
     return (
-        <AppContext>
+        <AppProvider>
             <Div />
-        </AppContext>
+        </AppProvider>
     );
 };
 
