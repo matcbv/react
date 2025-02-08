@@ -1,10 +1,10 @@
 import { useParams, useLocation, useHistory } from "react-router-dom";
 
 export default function SecundaryPage(){
-    // Com a função useParams(), conseguimos acessar os valors dos parâmetros passados em nossa URL através de um objeto:
+    // Com a função useParams(), conseguimos acessar os valores dos parâmetros passados em nossa URL através de um objeto:
     const params = useParams();
     /*
-        Com a função useLocation(), podemos obter informações sobre sobre a URL atual, como:
+        Com a função useLocation(), podemos obter informações sobre a URL atual, como:
 
         - pathname: O caminho (path) da URL atual.
         - search: A query string (partes após o ? na URL).
