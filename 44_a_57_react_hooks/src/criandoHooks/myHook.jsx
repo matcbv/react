@@ -33,8 +33,8 @@ function App() {
             <h1>Contador: {counter}</h1>
             <h2>Delay: {delay}ms</h2>
             <input type="text" onChange={(e) => setIncrementor(parseFloat(e.target.value))} />
-            <button type="button" onClick={(d) => setDelay(d + incrementor)}>+{incrementor}</button>
-            <button type="button" disabled={delay <= 0} onClick={(d) => setDelay(d - incrementor)}>-{incrementor}</button>
+            <button type="button" onClick={() => setDelay((d) => d + incrementor)}>+{incrementor}</button>
+            <button type="button" disabled={delay <= 0} onClick={() => setDelay((d) => d - incrementor)}>-{incrementor}</button>
         </div>
     );
 };

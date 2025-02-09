@@ -12,7 +12,11 @@ export default function SecundaryPage(){
         - state: O estado passado para a navegação (geralmente usado quando você usa navegação programática ou redirecionamentos).
     */
     const location = useLocation();
-    // Com useHistory(), temos acesso à API do histórico de navegação do navegador, onde podemos realizar redirecionamentos,
+    /*
+        Com useHistory(), temos acesso à API do histórico de navegação do navegador, onde podemos manipular a rota atual através de métodos como: push, replace, go, goBack e goForward.
+
+        Obs.: No React Router v6, useHistory acabou sendo substituido por useNavigate(), que possui uma API mais simples e prática.
+    */
     const history = useHistory();
 
     return (

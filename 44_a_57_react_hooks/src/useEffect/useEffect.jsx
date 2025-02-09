@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react';
 import '../styles.css';
 
 function eventFn(){
-  console.log('Clicado!')
-}
+  console.log('Clicado!');
+};
 
 function App(){
   const [counter, setCounter] = useState(0);
@@ -15,13 +15,13 @@ function App(){
 
    // Ao passarmos um array de dependencias vazio, ele se comportará como o lifecycle method componentDidMount:
   useEffect(() => {
-    console.log('componentDidMount')
+    console.log('componentDidMount');
   }, []);
 
   // Já passando dependências junto ao array, nosso componente será atualizado toda vez que essas dependências forem inicializada ou alteradas:
   useEffect(() => {
     // Obs.: Só podemos acessar em nosso useEffect, estados passados como dependências a ele.
-    console.log('counter foi alterado para:', counter)
+    console.log('counter foi alterado para:', counter);
     // setCounter(counter + 1) -> Isso causaria um loop. Portanto, devemos nos atentar em utilizar somente modificadores de estado que não tenham relação com nossas dependências.
   }, [counter]);
 
@@ -30,8 +30,8 @@ function App(){
     // Ao retornarmos uma função em nosso useEffect, essa função retornada irá se comportar como o lifecycle method componentWillUmount:
     return () => {
       document.querySelector('h1')?.removeEventListener('click', eventFn);
-    }
-  })
+    };
+  });
 
   return (
     <div className="App">
@@ -44,7 +44,7 @@ function App(){
         </button>
       </header>
     </div>
-  )
-}
+  );
+};
 
 export default App;

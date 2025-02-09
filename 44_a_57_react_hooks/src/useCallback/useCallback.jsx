@@ -10,7 +10,11 @@ import '../styles.css';
     return prevProps === nextProps
   ))
 
-  Com base na função de comparação informada, nosso componente só será re-renderizado caso ela retorne true.
+  Com base na função de comparação informada, nosso componente só será re-renderizado caso ela retorne false.
+
+  Caso não passemos uma função de comparação, será realizada uma shallow comparison. Para valores primitivos (strings, números, booleanos, null, undefined), o React realiza uma verificação estrita, já para objetos, arrays e funções, ele verifica apenas a referência e não o conteúdo interno.
+
+  Obs.: No caso de valores não primitivos, devemos salvar a sua referência com o hook useCallback ou useRef.
 */
 const Button = React.memo(
   ({incrementBtn}) => {

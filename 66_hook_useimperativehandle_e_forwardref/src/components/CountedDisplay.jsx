@@ -16,7 +16,7 @@ export default forwardRef(
         const handleClick = () => setRandomNum(Math.random().toFixed(2));
 
         /*
-            Com useImperativeHandle redefine completamente o que a ref expõe. Isso significa que a ref apontará somente para o objeto retornado por useImperativeHandle, ignorando qualquer referência automática ao elemento DOM. Sua estrutura segue o seguinte padrão:
+            Com useImperativeHandle redefinimos completamente o que a ref expõe. Isso significa que a ref apontará somente para o objeto retornado por useImperativeHandle, ignorando qualquer referência automática ao elemento DOM. Sua estrutura segue o seguinte padrão:
 
             useImperativeHandle(ref, () => { items })
         */

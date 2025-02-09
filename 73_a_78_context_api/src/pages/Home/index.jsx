@@ -18,7 +18,7 @@ const Home = () => {
 
   const handleError = () => {
     actions.asyncError()
-    .then(r => console.log(r))
+    .then(res => console.log(res))
     .catch(e => console.log(e.name + ':', e.message))
   }
 

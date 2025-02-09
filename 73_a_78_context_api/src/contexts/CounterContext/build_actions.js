@@ -1,7 +1,7 @@
 import actionTypes from "./action_types";
 
 export const buildActions = (dispatch) => {
-    // Iremos retornar um objeto contendo cada uma das funções
+    // Iremos retornar um objeto contendo cada uma das funções a serem utilizadas:
     return {
         increase: () => dispatch({type: actionTypes.INCREASE}),
         decrease: () => dispatch({type: actionTypes.DECREASE}),

@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 import { createContext, useReducer, useRef } from "react";
 import { reducer } from './reducer';
 import { buildActions } from './build_actions';
@@ -15,7 +15,7 @@ export const Context = createContext();
 // Criando nosso provider para encapsularmos nossos demais componentes:
 export const CounterContextProvider = ({children}) => {
     const [state, dispatch] = useReducer(reducer, initialState);
-    // Utilizaremos o hook useRef em nossa função buildAction para que sua referência seja mantida a cada renderização. 
+    // Utilizaremos o hook useRef em nossa função buildAction para que sua referência seja mantida a cada renderização.
     const actions = useRef(buildActions(dispatch));
 
     return (

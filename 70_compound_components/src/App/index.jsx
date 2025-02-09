@@ -24,7 +24,7 @@ const TurnOnOff = ({children}) => {
     };
 
     /*
-      A função cloneElement é responsaǘel por clonar um elemento React existente e, opcionalmente, adicionar ou sobrescrever propriedades (props) no clone. Sua sintaxe segue o seguinte padrão:
+      A função cloneElement é responsável por clonar um elemento React existente e, opcionalmente, adicionar ou sobrescrever propriedades (props) no clone. Sua sintaxe segue o seguinte padrão:
 
       React.cloneElement(element, [props], [...children])
       
@@ -42,7 +42,7 @@ const TurnOnOff = ({children}) => {
 
 const TurnedOn = ({isOn, children}) => isOn ? children : null;
 const TurnedOff = ({isOn, children}) => isOn ? null : children;
-// Ao passar nossos estilos via props para nosso componente, devemos utilizar o spread operator, seja via parâmetro, para retirá-lo do objeto do objeto padrão das props, quanto para passar os estilos para nosso elemento, retirando-os do objeto style.
+// Ao passar nossos estilos via props para nosso componente, devemos utilizar o spread operator, seja via parâmetro, para retirá-lo do objeto padrão das props, quanto para passar os estilos para nosso elemento, retirando-os do objeto styles.
 const TurnButton = ({isOn, onTurn, ...props}) => <button type="button" {...props} onClick={onTurn}>Turn {isOn ? 'OFF' : 'ON'}</button>;
 
 export default function App() {

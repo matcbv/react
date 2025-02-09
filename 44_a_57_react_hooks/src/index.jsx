@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import MyHook from './criandoHooks/myHook';
+import UseMemo from './useMemo/useMemo';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <MyHook />
+    <UseMemo />
   </React.StrictMode>
 );

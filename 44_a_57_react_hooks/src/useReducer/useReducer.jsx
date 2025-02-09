@@ -10,27 +10,27 @@ const globalState = {
 const reducer = (state, action) => {
     switch (action.type){
         case 'change': {
-            console.log('Título será alterado');
+            console.log('Título será alterado.');
             return {...state, title: action.payload};
         }
         case 'reverse': {
-            console.log('Título será invertido');
+            console.log('Título será invertido.');
             return {...state, title: state.title.split('').reverse().join('')};
         }
         case 'restore': {
-            console.log('Título será restaurado');
+            console.log('Título será restaurado.');
             return {...state, title: action.payload};
         }
         default: {
-            console.log('Nenhuma ação realizada');
+            console.log('Nenhuma ação realizada.');
             return state;
         }
-    }
-}
+    };
+};
 
 function App(){
-    // O hook useRefucer tem a função de atualizar o estado do nosso componente em situações mais complexas, onde utilizar o useSate não seria muito viável. Por parâmetro, iremos passar uma função reducer e o valor inicial a ser utilizado em nosso estado. Em retorno, obteremos nosso estado e uma função de dispatch.
-    const [state, dispatch] = useReducer(reducer, globalState)
+    // O hook useReducer tem a função de atualizar o estado do nosso componente em situações mais complexas, onde utilizar o useSate não seria muito viável. Por parâmetro, iremos passar uma função reducer e o valor inicial a ser utilizado em nosso estado. Em retorno, obteremos nosso estado e uma função de dispatch.
+    const [state, dispatch] = useReducer(reducer, globalState);
 
     return (
         <div>
@@ -41,7 +41,7 @@ function App(){
             <button onClick={() => dispatch({type: 'reverse' })}>Reverse</button>
             <button onClick={() => dispatch({type: 'restore', payload: 'Título de contexto' })}>Restore</button>
         </div>
-    )
-}
+    );
+};
 
 export default App;

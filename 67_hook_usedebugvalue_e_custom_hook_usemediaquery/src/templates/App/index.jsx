@@ -10,7 +10,6 @@ const useMediaQuery = (queryValue, initialValue = false) => {
 
     Obs.: O segundo parâmetro será uma função que receberá o valor passado no primeiro parâmetro. Com ela, podemos formatar esse valor ou até mesmo realizar uma lógica adicional.
   */
-
   useDebugValue(`query size: ${queryValue}`);
 
   useEffect(() => {

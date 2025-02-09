@@ -11,7 +11,7 @@ export default function Posts(){
             headers: {
                 postId: postId,
             },
-        }
+        },
     );
 
     const handleClick = id => setPostId(id);
@@ -26,7 +26,7 @@ export default function Posts(){
     }else {
         if(!Array.isArray(result)){
             result = [result];
-        }
+        };
         return (
             <div>
                 <h1>Posts</h1>

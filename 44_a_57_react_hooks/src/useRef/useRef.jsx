@@ -33,16 +33,16 @@ function App(){
         .then(res => setPosts(res));
     }, []);
 
-    // Quando o estado value for alterado, iremos aplicar o foco no input armazenda na propriedade current.
+    // Quando o estado value for alterado, iremos aplicar o foco no input armazendo na propriedade current.
     useEffect(() => {
-        input.current.focus()
+        input.current.focus();
     }, [value]);
 
     useEffect(() => {
-        counter.current++
+        counter.current++;
     });
 
-    const handleClick = (title) => { setValue(title) };
+    const handleClick = title => setValue(title);
 
     return (
         <div className="App">

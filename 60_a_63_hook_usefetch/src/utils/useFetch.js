@@ -5,7 +5,7 @@ const isObjectsEqual = (firstObj, secObj) => JSON.stringify(firstObj) === JSON.s
 
 export default function useFetch (url, options){
     // Abaixo, criamos os estados a serem utilizados em nosso hook:
-    // Obs.: Os componentes de um hook utilizado em um componente, quando atualizados, também irão causar a re-renderização do componente.
+    // Obs.: Os estados de um hook em uso no componente, quando atualizados, também irão causar a re-renderização do componente.
     const [result, setResult] = useState([]);
     const [loading, setLoading] = useState(false);
     const [shouldRender, setShouldRender] = useState(false);
@@ -23,7 +23,7 @@ export default function useFetch (url, options){
         } else if(!isObjectsEqual(optionsRef.current, options)){
             optionsRef.current = options;
             setShouldRender(s => !s);
-        }
+        };
     }, [url, options]);
 
     // Utilizando o useEffect para garantir que os posts só sejam requisitados durante a primeira montagem de nosso componente ou caso a url ou as options mudem.
@@ -35,8 +35,10 @@ export default function useFetch (url, options){
         const signal = controller.signal;
 
         setLoading(true);
+
         const fetchData = async () => {
             try{
+                // Passando o sinal de abortagem junto do cabeçalho recebido por parâmetro para nossa requisição.
                 const result = await (await fetch(urlRef.current, {signal, ...optionsRef.current})).json();
                 // Atualizando nosso estado caso o componente ainda esteja montado na tela:
                 if(waitFetch){
@@ -56,8 +58,9 @@ export default function useFetch (url, options){
         return () => {
             waitFetch = false;
             controller.abort();
-        }
+        };
 
     }, [shouldRender]);
+
     return [result, loading];
 };
