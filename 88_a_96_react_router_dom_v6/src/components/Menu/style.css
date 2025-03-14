@@ -1,0 +1,6 @@
+.menu ul{
+    display: flex;
+    column-gap: 20px;
+    list-style: none;
+    text-decoration: none;
+}

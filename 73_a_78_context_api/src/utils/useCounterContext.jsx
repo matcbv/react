@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Context } from ".";
+import { Context } from "../contexts/CounterContext";
 
 // Criando nossa função para utilizar o contexto para nosso Counter:
 export default function useCounterContext() {

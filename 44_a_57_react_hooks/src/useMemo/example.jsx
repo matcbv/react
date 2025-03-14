@@ -26,7 +26,7 @@ function App(){
     const [posts, setPosts] = useState([]);
     const [value, setValue] = useState('');
 
-    // O hook useEffect não pode ser assíncrono. Caso seja necessário o uso de assincronismo, devemos criar um outra função como assíncrona dentro de useEffect, chamando-a logo em seguida.
+    // O hook useEffect não pode ser assíncrono. Caso seja necessário o uso de assincronismo, devemos criar uma função assíncrona dentro de useEffect, chamando-a logo em seguida.
     useEffect(() => {
         setTimeout(() => {
             fetch('https://jsonplaceholder.typicode.com/posts')

@@ -26,7 +26,7 @@ const TurnOnOff = ({children}) => {
     /*
       A função cloneElement é responsável por clonar um elemento React existente e, opcionalmente, adicionar ou sobrescrever propriedades (props) no clone. Sua sintaxe segue o seguinte padrão:
 
-      React.cloneElement(element, [props], [...children])
+      React.cloneElement(element, [props], [...children]);
       
       - element: O elemento React que será clonado.
       - props: Um objeto contendo as propriedades que serão adicionadas ou sobrescritas no clone.

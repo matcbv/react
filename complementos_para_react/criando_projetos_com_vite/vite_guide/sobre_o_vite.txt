@@ -1,0 +1,18 @@
+---------- Sobre o Vite ----------
+
+O Vite é um build tool moderno para aplicações web, criado para ser extremamente rápido e eficiente no desenvolvimento frontend. Ele foi projetado para substituir o Webpack e outras ferramentas tradicionais, oferecendo um tempo de inicialização quase instantâneo e recarregamento rápido durante o desenvolvimento.
+
+---------- Principais conceitos ----------
+
+O Vite possui dois formatos de execução, utlizando diferentes métodos para servir o código transpilado.
+
+Modo de desenvolvimento:
+
+No modo de desenvolvimento, o Vite não entrega todo o código transpilado em um só bundle, mas sim trabalha diretamente com ES Modules. O próprio navegador importa os arquivos quando necessário, aproveitando o suporte nativo a ES Modules.
+
+Tais importações são interceptadas por um servidor embutido pelo Vite. Se o código usa TypeScript, Vue, JSX ou outras linguagens não suportadas diretamente pelo navegador, o Vite transpila apenas o necessário antes de enviá-lo. Por fim, caso o módulo tenha importações, o Vite reescreve os imports automaticamente para garantir que o navegador os encontre corretamente (Como reescrever para um CDN ou um caminho local gerenciado), dando continuidade na requisição das importações.
+
+Modo de produção:
+
+Já no modo de produção, o Vite realiza o empacotamento de nossos módulos, aplicando o tree shacking e otimizando o CSS, entregando por fim, um único bundle ao navegador.
+

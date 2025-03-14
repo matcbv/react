@@ -26,7 +26,7 @@ root.render(
 
             Com a propriedade exact, especificamos que nossa rota deve ter exatamente o caminho especificado. Ex.:
 
-            Sem exact /secPage poderia ser exibido quando path fosse /secPage, mas também /secPage/etc.
+            Sem exact, /secPage poderia ser exibido quando path fosse /secPage, mas também /secPage/etc.
           */}
           <Route path='/secPage/:slug?' component={SecundaryPage} />
           <Route path='/' component={Home} exact/>

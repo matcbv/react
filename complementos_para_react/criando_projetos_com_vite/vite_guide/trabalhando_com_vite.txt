@@ -1,0 +1,16 @@
+Para trabalharmos com Vite, podemos utilizar o comando:
+
+    npm create vite@latest my-app
+
+Possui o mesmo resultado que npx create-vite@latest my-app, porém o uso de npm create é uma abordagem mais moderna e padronizada. Foi implementada para ser utilizada com bibliotecas de geração de projetos.
+
+Obs.: O npm create já pressupõe que o pacote inicia seu nome com create, logo, ao utilizarmos vite, o npm irá interpretá-lo como create-vite. 
+
+Após isso, basta nos locomovermos para o diretório do nosso app (my-app) e rodarmos o comando para instalação das dependências:
+
+    cd my-app && npm install
+
+Por fim, podemos rodar nosso projeto com:
+
+    npm run dev
+

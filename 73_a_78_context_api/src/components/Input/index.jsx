@@ -1,4 +1,4 @@
-import useCounterContext from "../../contexts/CounterContext/use_counter_context";
+import useCounterContext from "../../utils/useCounterContext";
 
 export default function Input(){
     const [, action] = useCounterContext();

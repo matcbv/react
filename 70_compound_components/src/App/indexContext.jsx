@@ -38,7 +38,7 @@ const TurnButton = ({...props}) => {
 export default function App() {
   return (
     <TurnOnOff>
-      {/* Abaixo, nossos componentes estão contidas em uma div, impedidndo o mapeamento direto deles. */}
+      {/* Abaixo, nossos componentes estão contidas em uma div, impedindo o mapeamento direto deles. */}
       <div>
         <TurnedOn>
           <p>Ligado</p>

@@ -19,8 +19,8 @@ const Home = () => {
   const handleError = () => {
     actions.asyncError()
     .then(res => console.log(res))
-    .catch(e => console.log(e.name + ':', e.message))
-  }
+    .catch(e => console.log(e.name + ':', e.message));
+  };
 
   return (
     <div className='Home'>
