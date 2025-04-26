@@ -53,14 +53,14 @@ class ClassApp extends Component{
     };
   } 
 
-  // O React, por padrão, não realiza o binding do this. Dessa forma, para termos acesso a ele no método, temos de realizar tal processo manualmente, assim como foi feito em nosso constructor.
+  // O React, por padrão, não realiza o binding do this, já que funções utilizadas como callbacks, perdem o contexto de seu this. Dessa forma, para termos acesso a ele no método, temos de realizar tal processo manualmente, assim como foi feito em nosso constructor.
   pClickHandle(){
     console.log(`Clicked - ${ this.state.name }`);
     // Iremos também mudar o valor da propriedade name de nosso state. Para isso, devemos utilizar o método setState. Ao realizarmos tal mudança, nosso método render será chamado automaticamente, atualizando nossa aplicação com o novo valor de name.
     this.setState({ name: 'Matheus' });
   };
 
-  // Podemos evitar a necessidade de utilizar o binding do this de nossos métodos ao utilizarmos arrow function.
+  // Podemos evitar a necessidade de utilizar o binding do this de nossos métodos ao utilizarmos arrow function, já que elas preservam o contexto onde foram criadas.
   aClickHandle = (event) => {
     event.preventDefault();
     const { counter } = this.state;
