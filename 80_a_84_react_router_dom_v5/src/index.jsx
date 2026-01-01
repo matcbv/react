@@ -15,7 +15,11 @@ root.render(
       {/*
         O BrowserRouter é um componente que faz parte da biblioteca React Router é responsável por envolver toda a aplicação (ou uma parte dela) para fornecer a funcionalidade de roteamento baseada na URL. Funciona como uma espécie de Provider de roteamento.
         
-        Quando você utiliza o BrowserRouter, ele faz parte de uma abordagem chamada Single Page Application (SPA). Quando a URL é alterada, a página não é recarregada, pois a navegação é gerenciada dinamicamente pelo React, utilizando a API de histórico do navegador para controlar o histórico de navegação. Após isso, o componente relacionado com determinada rota é adicionado dinâmicamento sem que a página seja atualizada.
+        Quando você utiliza o BrowserRouter, ele faz parte de uma abordagem chamada Single Page Application (SPA). Quando a URL é alterada, a página não é recarregada, pois a navegação é gerenciada dinamicamente pelo React (cliente-side).
+
+        O React escuta o evento popstate do navegador que é disparado sempre que o usuário navega pelo histórico usando os botões de "voltar" ou "avançar". Além disso, também intercepta as alterações da URL feita via pushState() ou replaceState(). Com essas maneiras, consegue previnir o reload, re-renderizando o componente correto.
+
+        Obs: Os eventos pushState() e replaceState() são chamados via useNavigate ou o componente Link.
       */}
       <BrowserRouter>
         <Menu />
@@ -26,7 +30,7 @@ root.render(
 
             Com a propriedade exact, especificamos que nossa rota deve ter exatamente o caminho especificado. Ex.:
 
-            Sem exact, /secPage poderia ser exibido quando path fosse /secPage, mas também /secPage/etc.
+            Sem exact, / poderia resultar em /secPage, já que começa com /, já contando como match.
           */}
           <Route path='/secPage/:slug?' component={SecundaryPage} />
           <Route path='/' component={Home} exact/>

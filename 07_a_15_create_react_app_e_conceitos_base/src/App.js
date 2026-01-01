@@ -46,7 +46,7 @@ class ClassApp extends Component{
     super(props);
     // O método bind cria uma nova função (uma cópia da função original) substituindo o valor do this pelo informado.
     this.clickHandle = this.pClickHandle.bind(this);
-    // A propriedad state é um objeto que contém valores que representam o estado atual do componente. Esses valores podem ser usados no JSX para renderizar o conteúdo dinamicamente, com base no estado atual do componente.
+    // A propriedade state é um objeto que contém valores que representam o estado atual do componente. Esses valores podem ser usados no JSX para renderizar o conteúdo dinamicamente, com base no estado atual do componente.
     this.state = {
       name: 'Matheus Cerqueira',
       counter: 0

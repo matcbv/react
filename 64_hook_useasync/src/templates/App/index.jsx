@@ -3,7 +3,10 @@ import useAsync from '../../utils/useAsync';
 import './styles.css';
 
 // Função a ser enviada para useAsync:
-const fetchData = async () => await (await fetch('https://jsonplaceholder.typicode.com/posts')).json();
+const fetchData = async () => {
+  const data = await fetch('https://jsonplaceholder.typicode.com/posts');
+  return await data.json();
+};
 
 function App() {
   // Passando uma função e um booleano indicando se devemos realizar a nossa operação assíncrona:

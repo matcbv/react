@@ -3,7 +3,6 @@ import './style.css';
 
 export const About = () => {
     const location = useLocation();
-    console.log(location)
 
     return (
         <div>

@@ -14,6 +14,7 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
       <Menu />
+      {/* No React Router v6, o componte Switch foi substituído por Routes, que possui o mesmo papel de selecionar a primeira rota que bate com a selecionada no navegador pelo BrowserRouter. */}
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/about' element={<About />} />

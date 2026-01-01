@@ -17,7 +17,7 @@ class ClassFields{
     sayName = () => {
         console.log('Olá! Meu nome é', this.nome);
     };
-}
+};
 
 let instance = new ClassFields();
 instance.sayName();
@@ -31,8 +31,8 @@ class PrivateAndPublic{
 
     checkBalance = () => {
         console.log('Seu salto atual é de R$', this.#balance.toFixed(2));
-    }
-}
+    };
+};
 
 instance = new PrivateAndPublic();
 instance.checkBalance();
@@ -42,8 +42,8 @@ instance.checkBalance();
 class Static{
     static somar = (x, y) => {
         console.log(`A soma entre ${x} e ${y} é igual:`, x + y);
-    }
-}
+    };
+};
 
 Static.somar(1, 10);
 
@@ -56,7 +56,6 @@ Static.somar(1, 10);
 
     Ex.:
 */
-
 class DinamicParams{
     constructor(f_var, s_var){
         this.f_var = f_var;
@@ -73,7 +72,6 @@ instance = new DinamicParams();
 
     Ex.:
 */
-
 class Super extends DinamicParams{
     constructor(f_var, s_var, t_var){
         super(f_var, s_var);
@@ -90,20 +88,19 @@ instance = new Super();
 
     Ex.:
 */
-
 class Binding extends Component{
     constructor(props){
         super(props);
         this.notThisFunc = this.notThisFunc.bind(this);
         this.state = {
             name: 'Matheus Cerqueira'
-        }
+        };
     };
 
     notThisFunc(){
         const { name } = this.state
         console.log(name)
-    }
+    };
 };
 
 instance = new Super();
